@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1
+        },
+        "requestBody": {
+            "properties": {
+                "access_url": {
+                    "description": "URL of the site",
+                    "type": "string"
+                },
+                "admin_url": {
+                    "description": "Adminsitration URL",
+                    "type": "string"
+                },
+                "akeebaProfile": {
+                    "description": "Akeeba Profile",
+                    "format": "date-format",
+                    "type": "string"
+                },
+                "backupSchedule": {
+                    "description": "Backup Schedule",
+                    "type": "string"
+                },
+                "dateBackup": {
+                    "description": "Date backup",
+                    "format": "date-format",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Friendly name for the site",
+                    "type": "string"
+                },
+                "notes": {
+                    "description": "Personnal note for the site",
+                    "type": "string"
+                },
+                "published": {
+                    "description": "Published status of site",
+                    "type": "boolean"
+                },
+                "secret_word": {
+                    "description": "Watchful secret word",
+                    "type": "string"
+                },
+                "tags": {
+                    "description": "JSON encoded array of tags for the site (e.g. [{<q>name</q>:<q>mytag</q>},{<q>name</q>:<q>anothertag</q>}])",
+                    "format": "json",
+                    "type": "string"
+                },
+                "word_akeeba": {
+                    "description": "Akeeba backup word",
+                    "type": "string"
+                },
+                "word_check": {
+                    "description": "Word checked for uptime",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "access_url"
+            ],
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1
+        },
+        "requestBody": {
+            "properties": {
+                "email": {
+                    "description": "Email of the SSO User",
+                    "type": "string"
+                },
+                "groupid": {
+                    "description": "Security Joomla group ID",
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "id": {
+                    "description": "Unique identifier for the SSO User",
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "lastLoginDate": {
+                    "description": "Last login date on remote site",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "lastLoginSite": {
+                    "description": "Site Id of the last remote login",
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "name": {
+                    "description": "Account display name",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "Password of the SSO User",
+                    "type": "string"
+                },
+                "userid": {
+                    "description": "Watchful user account",
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "username": {
+                    "description": "Username of the SSO User",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "email",
+                "groupid",
+                "id",
+                "name",
+                "password",
+                "userid",
+                "username"
+            ],
+            "type": "object"
+        }
+    }
+}

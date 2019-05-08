@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1
+        },
+        "limitstart": {
+            "required": false,
+            "type": "integer",
+            "format": "int64",
+            "minimum": 0
+        },
+        "order": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

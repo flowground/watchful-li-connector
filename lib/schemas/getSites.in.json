@@ -1,0 +1,83 @@
+{
+    "type": "object",
+    "properties": {
+        "siteids": {
+            "required": false,
+            "type": "string"
+        },
+        "name": {
+            "required": false,
+            "type": "string"
+        },
+        "access_url": {
+            "required": false,
+            "type": "string"
+        },
+        "j_version": {
+            "required": false,
+            "type": "string"
+        },
+        "ip": {
+            "required": false,
+            "type": "string"
+        },
+        "jUpdate": {
+            "type": "integer",
+            "enum": [
+                1,
+                0
+            ]
+        },
+        "canUpdate": {
+            "type": "integer",
+            "enum": [
+                1,
+                0
+            ]
+        },
+        "published": {
+            "required": false,
+            "type": "integer",
+            "enum": [
+                1,
+                0
+            ]
+        },
+        "error": {
+            "required": false,
+            "type": "string"
+        },
+        "nbUpdates": {
+            "required": false,
+            "type": "string"
+        },
+        "up": {
+            "required": false,
+            "type": "integer",
+            "enum": [
+                1,
+                0
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1
+        },
+        "limitstart": {
+            "required": false,
+            "type": "integer",
+            "format": "int64",
+            "minimum": 0
+        },
+        "order": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

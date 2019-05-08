@@ -1,0 +1,1033 @@
+{
+    "title": "watchful.li",
+    "docsUrl": "https://watchful.li/faqs/tools/watchful-rest-api.html",
+    "url": "https://api.apis.guru/v2/specs/watchful.li/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://watchful.li/api/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "getAudits": {
+            "main": "./lib/actions/getAudits.js",
+            "title": "Get a list of audits",
+            "description": "Returns a list of audits",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAudits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getFieldsAudits": {
+            "main": "./lib/actions/getFieldsAudits.js",
+            "title": "Get the list of fields",
+            "description": "Returns a list of fields",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFieldsAudits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteAuditById": {
+            "main": "./lib/actions/deleteAuditById.js",
+            "title": "Delete a specific audit",
+            "description": "Delete a specific audit",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteAuditById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAuditById": {
+            "main": "./lib/actions/getAuditById.js",
+            "title": "Find audit by ID",
+            "description": "Returns a audit based on ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAuditById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getExtensions": {
+            "main": "./lib/actions/getExtensions.js",
+            "title": "Get a list Extensions",
+            "description": "Returns a list Extensions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getExtensions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getFieldsExtensions": {
+            "main": "./lib/actions/getFieldsExtensions.js",
+            "title": "Get the list of fields",
+            "description": "Returns a list of fields",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFieldsExtensions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ignoreExtensionUpdate": {
+            "main": "./lib/actions/ignoreExtensionUpdate.js",
+            "title": "Set 'ignore updates' for a given extension / site_id",
+            "description": "Set 'ignore updates' for a given extension / site_id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ignoreExtensionUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "unignoreExtensionUpdate": {
+            "main": "./lib/actions/unignoreExtensionUpdate.js",
+            "title": "Remove 'ignore updates' for a given extension",
+            "description": "Remove 'ignore updates' for a given extension",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/unignoreExtensionUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateExtension": {
+            "main": "./lib/actions/updateExtension.js",
+            "title": "Update the extension on the remote site",
+            "description": "Update the extension on the remote site",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateExtension.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getFeedbacks": {
+            "main": "./lib/actions/getFeedbacks.js",
+            "title": "Get feedbacks",
+            "description": "Returns a list of feedbacks",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFeedbacks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createFeedbacks": {
+            "main": "./lib/actions/createFeedbacks.js",
+            "title": "Create a feedback",
+            "description": "Create a feedback",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createFeedbacks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getFieldsFeedbacks": {
+            "main": "./lib/actions/getFieldsFeedbacks.js",
+            "title": "Get the list of fields",
+            "description": "Returns a list of fields",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFieldsFeedbacks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_logs": {
+            "main": "./lib/actions/get_logs.js",
+            "title": "Get a list of logs",
+            "description": "Returns a list of logs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_logs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getExportLogs": {
+            "main": "./lib/actions/getExportLogs.js",
+            "title": "Get a CSV or PDF file contain the list of logs",
+            "description": "Returns a file contain the list of logs",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getExportLogs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getFieldsLogs": {
+            "main": "./lib/actions/getFieldsLogs.js",
+            "title": "Get the list of fields",
+            "description": "Returns a list of fields",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFieldsLogs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTypesLogs": {
+            "main": "./lib/actions/getTypesLogs.js",
+            "title": "Get the list of log types",
+            "description": "Returns a list of log types",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTypesLogs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteLogById": {
+            "main": "./lib/actions/deleteLogById.js",
+            "title": "Delete a specific log",
+            "description": "Delete a specific log",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteLogById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_packages": {
+            "main": "./lib/actions/post_packages.js",
+            "title": "post_packages",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_packages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_reports_sites__id_": {
+            "main": "./lib/actions/get_reports_sites__id_.js",
+            "title": "Returns a PDF report for a specific site",
+            "description": "Returns a PDF report based on a site ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_reports_sites__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_reports_tags__id_": {
+            "main": "./lib/actions/get_reports_tags__id_.js",
+            "title": "Find sites by ID",
+            "description": "Returns a report based on a site ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_reports_tags__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSites": {
+            "main": "./lib/actions/getSites.js",
+            "title": "Get a list of Sites",
+            "description": "Returns a list of Sites",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSites.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createSite": {
+            "main": "./lib/actions/createSite.js",
+            "title": "Create a site",
+            "description": "Create a site",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createSite.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_sites_metadata": {
+            "main": "./lib/actions/get_sites_metadata.js",
+            "title": "Get the list of fields",
+            "description": "Returns a list of fields",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_sites_metadata.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_sites__id_": {
+            "main": "./lib/actions/delete_sites__id_.js",
+            "title": "Delete a specific Site",
+            "description": "Delete a specific Site",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_sites__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSiteById": {
+            "main": "./lib/actions/getSiteById.js",
+            "title": "Find sites by ID",
+            "description": "Return a site based on ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSiteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "put_sites__id_": {
+            "main": "./lib/actions/put_sites__id_.js",
+            "title": "Update a site",
+            "description": "Update a site",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/put_sites__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSiteAudits": {
+            "main": "./lib/actions/getSiteAudits.js",
+            "title": "Return audits for a specific website",
+            "description": "Return audits for a specific website",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSiteAudits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "createAudits": {
+            "main": "./lib/actions/createAudits.js",
+            "title": "Create an audit for the site",
+            "description": "Create an audit for the site",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/createAudits.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addSiteToBackupQueue": {
+            "main": "./lib/actions/addSiteToBackupQueue.js",
+            "title": "Add the site to the backup queue",
+            "description": "Add the site to the backup queue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addSiteToBackupQueue.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getBackupProfiles": {
+            "main": "./lib/actions/getBackupProfiles.js",
+            "title": "Return backup profile",
+            "description": "Return backup profile",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getBackupProfiles.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getListBackups": {
+            "main": "./lib/actions/getListBackups.js",
+            "title": "List of latest backups",
+            "description": "List of latest backups",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getListBackups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "startSiteBackup": {
+            "main": "./lib/actions/startSiteBackup.js",
+            "title": "Start a remote backup for the site",
+            "description": "Start a remote backup for the site",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/startSiteBackup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "stepSiteBackup": {
+            "main": "./lib/actions/stepSiteBackup.js",
+            "title": "Step (continue) a remote backup for the site",
+            "description": "Step (continue) a remote backup for the site",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/stepSiteBackup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_sites__id__extensions": {
+            "main": "./lib/actions/get_sites__id__extensions.js",
+            "title": "Get extensions for a site",
+            "description": "Get extensions for a site",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_sites__id__extensions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "installExtension": {
+            "main": "./lib/actions/installExtension.js",
+            "title": "Install extension",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/installExtension.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_sites__id__logs": {
+            "main": "./lib/actions/get_sites__id__logs.js",
+            "title": "Return logs for a specific website",
+            "description": "Return logs for a specific website",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_sites__id__logs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateLog": {
+            "main": "./lib/actions/CreateLog.js",
+            "title": "Create a custom log for a specific website",
+            "description": "Create a custom log for a specific website",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateLog.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteMonitor": {
+            "main": "./lib/actions/deleteMonitor.js",
+            "title": "Delete uptime monitor",
+            "description": "Return boolean",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteMonitor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postMonitor": {
+            "main": "./lib/actions/postMonitor.js",
+            "title": "Post uptime monitor",
+            "description": "Return boolean",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postMonitor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "scanner": {
+            "main": "./lib/actions/scanner.js",
+            "title": "Scan the site for malware",
+            "description": "Scan the site for malware",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/scanner.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "seoAnalyze": {
+            "main": "./lib/actions/seoAnalyze.js",
+            "title": "SEO analyze for a page",
+            "description": "SEO analyze for a page",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/seoAnalyze.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_sites__id__tags": {
+            "main": "./lib/actions/get_sites__id__tags.js",
+            "title": "Return tags for a specific website",
+            "description": "Return tags for a specific website",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_sites__id__tags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "postTags": {
+            "main": "./lib/actions/postTags.js",
+            "title": "Add tags for a specific website",
+            "description": "Add tags for a specific website",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateJoomla": {
+            "main": "./lib/actions/updateJoomla.js",
+            "title": "Update Joomla core on the remote site",
+            "description": "Update Joomla core on the remote site",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateJoomla.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getUptime": {
+            "main": "./lib/actions/getUptime.js",
+            "title": "Return uptime data",
+            "description": "Return uptime data",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUptime.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "validateSite": {
+            "main": "./lib/actions/validateSite.js",
+            "title": "validate the site, return the new logs",
+            "description": "validate the site",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/validateSite.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "validateDebugSite": {
+            "main": "./lib/actions/validateDebugSite.js",
+            "title": "validate the site, return the debug information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/validateDebugSite.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSsoUsers": {
+            "main": "./lib/actions/getSsoUsers.js",
+            "title": "Get a list of SSO Users",
+            "description": "Returns a list of SSO Users",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSsoUsers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateSsoUsers": {
+            "main": "./lib/actions/CreateSsoUsers.js",
+            "title": "Create a SSO User",
+            "description": "Create a SSO User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateSsoUsers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "deleteSsoUserById": {
+            "main": "./lib/actions/deleteSsoUserById.js",
+            "title": "Delete a specific SSO User",
+            "description": "Delete a specific SSO User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSsoUserById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSsoUsersById": {
+            "main": "./lib/actions/getSsoUsersById.js",
+            "title": "Find SSO User by ID",
+            "description": "Returns a SSO User based on ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSsoUsersById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateSsoUsers": {
+            "main": "./lib/actions/UpdateSsoUsers.js",
+            "title": "Update a SSO User",
+            "description": "Update a SSO User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateSsoUsers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tags": {
+            "main": "./lib/actions/get_tags.js",
+            "title": "Get a list of tags",
+            "description": "Returns a list of tags",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateTags": {
+            "main": "./lib/actions/CreateTags.js",
+            "title": "Create a tag",
+            "description": "Create a tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tags_metadata": {
+            "main": "./lib/actions/get_tags_metadata.js",
+            "title": "Get the list of fields",
+            "description": "Returns a list of fields",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tags_metadata.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_tags__id_": {
+            "main": "./lib/actions/delete_tags__id_.js",
+            "title": "Delete a specific tag",
+            "description": "Delete a specific tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_tags__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTagById": {
+            "main": "./lib/actions/getTagById.js",
+            "title": "Find tag by ID",
+            "description": "Returns a tag based on ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTagById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateTag": {
+            "main": "./lib/actions/UpdateTag.js",
+            "title": "Update a tag",
+            "description": "Update a tag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateTag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getSitesByTags": {
+            "main": "./lib/actions/getSitesByTags.js",
+            "title": "Find sites by tag ID",
+            "description": "Returns a list of sites based with a specific tag id",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSitesByTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

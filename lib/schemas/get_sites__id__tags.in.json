@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1
+        },
+        "name": {
+            "required": false,
+            "type": "string"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "",
+                "default",
+                "success",
+                "warning",
+                "important",
+                "info",
+                "inverse"
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1
+        },
+        "limitstart": {
+            "required": false,
+            "type": "integer",
+            "format": "int64",
+            "minimum": 0
+        },
+        "order": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

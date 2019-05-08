@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "id": {
+                    "description": "Unique identifier for the tag",
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "name": {
+                    "description": "Friendly name for the tag",
+                    "type": "string"
+                },
+                "nbSites": {
+                    "description": "Number of sites use this tag (required field id)",
+                    "type": "integer"
+                },
+                "type": {
+                    "default": "default",
+                    "description": "Bootstrap color of the tag",
+                    "enum": [
+                        "default",
+                        "success",
+                        "warning",
+                        "important",
+                        "info",
+                        "inverse"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ],
+            "type": "object"
+        }
+    }
+}

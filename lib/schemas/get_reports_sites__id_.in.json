@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "minimum": 1
+        },
+        "from": {
+            "required": false,
+            "type": "string"
+        },
+        "to": {
+            "required": false,
+            "type": "string"
+        },
+        "reports": {
+            "required": false,
+            "type": "string"
+        },
+        "log_type": {
+            "type": "string",
+            "enum": [
+                "",
+                "plugin_sends_error",
+                "curlerror",
+                "modified_file",
+                "word_not_in_homepage",
+                "file_not_exists",
+                "update_available",
+                "new_extension",
+                "deleted_extension",
+                "extension_not_saved",
+                "modified_value_files"
+            ]
+        },
+        "compare": {
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ]
+        }
+    }
+}
